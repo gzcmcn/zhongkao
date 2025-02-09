@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孤烛残梦祝2025中考学子中考加油！</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .countdown div {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .countdown span {
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+            color: #ddd;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #ff3b2f;
+            transform: translateY(-5px);
+        }
+
+        
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff6f61;
+            animation: floatUp 2s ease-out;
+        }
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" /></svg>');
+            animation: twinkle 5s infinite;
+            z-index: -1;
+        }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="stars"></div>
+
+    
+    <div class="container">
+        <h1>中考加油！</h1>
+        <p>奋斗的青春最美丽，拼搏的汗水最闪耀！</p>
+        <p>相信自己，你一定可以做到！十中，二中，一中等着你。</p>
+        <p>你的骄傲或失败已成为过去，你前方的路依旧光明，不要被骄傲或沮丧的乌云所笼罩！态度决定一切行动决定未来</p>
+        <p>@李jy(十班)@孙xy (七班)@孙xy(八班)@李mx（七班)@附中:高cb@tjq（九班)@孟xy(七班)</p>
+
+        
+        <div class="countdown">
+            <div>
+                <span id="days">00</span>
+                <span>天</span>
+            </div>
+            <div>
+                <span id="hours">00</span>
+                <span>小时</span>
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                <span>分钟</span>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <span>秒</span>
+            </div>
+        </div>
+
+        <button class="button" id="dreamButton">为梦想冲刺！</button>
+    </div>
+
+    <script>
+        // 设置中考日期（年、月、日）
+        const examDate = new Date('2025-06-15T00:00:00');
+
+        
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = examDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+
+        
+        const button = document.getElementById('dreamButton');
+        button.addEventListener('click', (event) => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${event.clientX}px`;
+            heart.style.top = `${event.clientY}px`;
+            document.body.appendChild(heart);
+
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
